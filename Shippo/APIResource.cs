@@ -17,19 +17,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 using System;
-using System.Collections.Generic;
 using System.Collections;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Web;
-
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace Shippo {
-    public class APIResource {
+    public partial class APIResource : IAPIResource, IAPIResourceAsync {
         public static readonly string api_endpoint = "https://api.goshippo.com/v1";
         static readonly string user_agent = "Shippo/v1 CSharpBindings/1.0";
         public static readonly int RatesReqTimeout = 25;
